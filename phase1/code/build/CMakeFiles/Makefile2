@@ -54,10 +54,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/retr0/Documents/3ano2sem/cg/trabalho/phase1/code
+CMAKE_SOURCE_DIR = /home/retr0/Repositorios/CG2025-UMINHO/phase1/code
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/retr0/Documents/3ano2sem/cg/trabalho/phase1/code/build
+CMAKE_BINARY_DIR = /home/retr0/Repositorios/CG2025-UMINHO/phase1/code/build
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -83,14 +83,14 @@ clean: CMakeFiles/UnrealEngine.dir/clean
 CMakeFiles/generator.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/retr0/Documents/3ano2sem/cg/trabalho/phase1/code/build/CMakeFiles --progress-num=4,5,6 "Built target generator"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/retr0/Repositorios/CG2025-UMINHO/phase1/code/build/CMakeFiles --progress-num=5,6,7,8 "Built target generator"
 .PHONY : CMakeFiles/generator.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/generator.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/retr0/Documents/3ano2sem/cg/trabalho/phase1/code/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/retr0/Repositorios/CG2025-UMINHO/phase1/code/build/CMakeFiles 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/generator.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/retr0/Documents/3ano2sem/cg/trabalho/phase1/code/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/retr0/Repositorios/CG2025-UMINHO/phase1/code/build/CMakeFiles 0
 .PHONY : CMakeFiles/generator.dir/rule
 
 # Convenience name for target.
@@ -109,14 +109,14 @@ CMakeFiles/generator.dir/clean:
 CMakeFiles/UnrealEngine.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/UnrealEngine.dir/build.make CMakeFiles/UnrealEngine.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/UnrealEngine.dir/build.make CMakeFiles/UnrealEngine.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/retr0/Documents/3ano2sem/cg/trabalho/phase1/code/build/CMakeFiles --progress-num=1,2,3 "Built target UnrealEngine"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/retr0/Repositorios/CG2025-UMINHO/phase1/code/build/CMakeFiles --progress-num=1,2,3,4 "Built target UnrealEngine"
 .PHONY : CMakeFiles/UnrealEngine.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/UnrealEngine.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/retr0/Documents/3ano2sem/cg/trabalho/phase1/code/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/retr0/Repositorios/CG2025-UMINHO/phase1/code/build/CMakeFiles 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/UnrealEngine.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/retr0/Documents/3ano2sem/cg/trabalho/phase1/code/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/retr0/Repositorios/CG2025-UMINHO/phase1/code/build/CMakeFiles 0
 .PHONY : CMakeFiles/UnrealEngine.dir/rule
 
 # Convenience name for target.

@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/UnrealEngine.dir/src/Box.cpp.o"
+  "CMakeFiles/UnrealEngine.dir/src/Box.cpp.o.d"
   "CMakeFiles/UnrealEngine.dir/src/Engine.cpp.o"
   "CMakeFiles/UnrealEngine.dir/src/Engine.cpp.o.d"
   "CMakeFiles/UnrealEngine.dir/src/Plane.cpp.o"

@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/retr0/Documents/3ano2sem/cg/trabalho/phase1/code
+CMAKE_SOURCE_DIR = /home/retr0/Repositorios/CG2025-UMINHO/phase1/code
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/retr0/Documents/3ano2sem/cg/trabalho/phase1/code/build
+CMAKE_BINARY_DIR = /home/retr0/Repositorios/CG2025-UMINHO/phase1/code/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/UnrealEngine.dir/depend.make
@@ -70,49 +70,65 @@ include CMakeFiles/UnrealEngine.dir/progress.make
 include CMakeFiles/UnrealEngine.dir/flags.make
 
 CMakeFiles/UnrealEngine.dir/src/Plane.cpp.o: CMakeFiles/UnrealEngine.dir/flags.make
-CMakeFiles/UnrealEngine.dir/src/Plane.cpp.o: /home/retr0/Documents/3ano2sem/cg/trabalho/phase1/code/src/Plane.cpp
+CMakeFiles/UnrealEngine.dir/src/Plane.cpp.o: /home/retr0/Repositorios/CG2025-UMINHO/phase1/code/src/Plane.cpp
 CMakeFiles/UnrealEngine.dir/src/Plane.cpp.o: CMakeFiles/UnrealEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/retr0/Documents/3ano2sem/cg/trabalho/phase1/code/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/UnrealEngine.dir/src/Plane.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/UnrealEngine.dir/src/Plane.cpp.o -MF CMakeFiles/UnrealEngine.dir/src/Plane.cpp.o.d -o CMakeFiles/UnrealEngine.dir/src/Plane.cpp.o -c /home/retr0/Documents/3ano2sem/cg/trabalho/phase1/code/src/Plane.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/retr0/Repositorios/CG2025-UMINHO/phase1/code/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/UnrealEngine.dir/src/Plane.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/UnrealEngine.dir/src/Plane.cpp.o -MF CMakeFiles/UnrealEngine.dir/src/Plane.cpp.o.d -o CMakeFiles/UnrealEngine.dir/src/Plane.cpp.o -c /home/retr0/Repositorios/CG2025-UMINHO/phase1/code/src/Plane.cpp
 
 CMakeFiles/UnrealEngine.dir/src/Plane.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/UnrealEngine.dir/src/Plane.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/retr0/Documents/3ano2sem/cg/trabalho/phase1/code/src/Plane.cpp > CMakeFiles/UnrealEngine.dir/src/Plane.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/retr0/Repositorios/CG2025-UMINHO/phase1/code/src/Plane.cpp > CMakeFiles/UnrealEngine.dir/src/Plane.cpp.i
 
 CMakeFiles/UnrealEngine.dir/src/Plane.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/UnrealEngine.dir/src/Plane.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/retr0/Documents/3ano2sem/cg/trabalho/phase1/code/src/Plane.cpp -o CMakeFiles/UnrealEngine.dir/src/Plane.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/retr0/Repositorios/CG2025-UMINHO/phase1/code/src/Plane.cpp -o CMakeFiles/UnrealEngine.dir/src/Plane.cpp.s
+
+CMakeFiles/UnrealEngine.dir/src/Box.cpp.o: CMakeFiles/UnrealEngine.dir/flags.make
+CMakeFiles/UnrealEngine.dir/src/Box.cpp.o: /home/retr0/Repositorios/CG2025-UMINHO/phase1/code/src/Box.cpp
+CMakeFiles/UnrealEngine.dir/src/Box.cpp.o: CMakeFiles/UnrealEngine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/retr0/Repositorios/CG2025-UMINHO/phase1/code/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/UnrealEngine.dir/src/Box.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/UnrealEngine.dir/src/Box.cpp.o -MF CMakeFiles/UnrealEngine.dir/src/Box.cpp.o.d -o CMakeFiles/UnrealEngine.dir/src/Box.cpp.o -c /home/retr0/Repositorios/CG2025-UMINHO/phase1/code/src/Box.cpp
+
+CMakeFiles/UnrealEngine.dir/src/Box.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/UnrealEngine.dir/src/Box.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/retr0/Repositorios/CG2025-UMINHO/phase1/code/src/Box.cpp > CMakeFiles/UnrealEngine.dir/src/Box.cpp.i
+
+CMakeFiles/UnrealEngine.dir/src/Box.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/UnrealEngine.dir/src/Box.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/retr0/Repositorios/CG2025-UMINHO/phase1/code/src/Box.cpp -o CMakeFiles/UnrealEngine.dir/src/Box.cpp.s
 
 CMakeFiles/UnrealEngine.dir/src/Engine.cpp.o: CMakeFiles/UnrealEngine.dir/flags.make
-CMakeFiles/UnrealEngine.dir/src/Engine.cpp.o: /home/retr0/Documents/3ano2sem/cg/trabalho/phase1/code/src/Engine.cpp
+CMakeFiles/UnrealEngine.dir/src/Engine.cpp.o: /home/retr0/Repositorios/CG2025-UMINHO/phase1/code/src/Engine.cpp
 CMakeFiles/UnrealEngine.dir/src/Engine.cpp.o: CMakeFiles/UnrealEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/retr0/Documents/3ano2sem/cg/trabalho/phase1/code/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/UnrealEngine.dir/src/Engine.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/UnrealEngine.dir/src/Engine.cpp.o -MF CMakeFiles/UnrealEngine.dir/src/Engine.cpp.o.d -o CMakeFiles/UnrealEngine.dir/src/Engine.cpp.o -c /home/retr0/Documents/3ano2sem/cg/trabalho/phase1/code/src/Engine.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/retr0/Repositorios/CG2025-UMINHO/phase1/code/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/UnrealEngine.dir/src/Engine.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/UnrealEngine.dir/src/Engine.cpp.o -MF CMakeFiles/UnrealEngine.dir/src/Engine.cpp.o.d -o CMakeFiles/UnrealEngine.dir/src/Engine.cpp.o -c /home/retr0/Repositorios/CG2025-UMINHO/phase1/code/src/Engine.cpp
 
 CMakeFiles/UnrealEngine.dir/src/Engine.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/UnrealEngine.dir/src/Engine.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/retr0/Documents/3ano2sem/cg/trabalho/phase1/code/src/Engine.cpp > CMakeFiles/UnrealEngine.dir/src/Engine.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/retr0/Repositorios/CG2025-UMINHO/phase1/code/src/Engine.cpp > CMakeFiles/UnrealEngine.dir/src/Engine.cpp.i
 
 CMakeFiles/UnrealEngine.dir/src/Engine.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/UnrealEngine.dir/src/Engine.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/retr0/Documents/3ano2sem/cg/trabalho/phase1/code/src/Engine.cpp -o CMakeFiles/UnrealEngine.dir/src/Engine.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/retr0/Repositorios/CG2025-UMINHO/phase1/code/src/Engine.cpp -o CMakeFiles/UnrealEngine.dir/src/Engine.cpp.s
 
 # Object files for target UnrealEngine
 UnrealEngine_OBJECTS = \
 "CMakeFiles/UnrealEngine.dir/src/Plane.cpp.o" \
+"CMakeFiles/UnrealEngine.dir/src/Box.cpp.o" \
 "CMakeFiles/UnrealEngine.dir/src/Engine.cpp.o"
 
 # External object files for target UnrealEngine
 UnrealEngine_EXTERNAL_OBJECTS =
 
 UnrealEngine: CMakeFiles/UnrealEngine.dir/src/Plane.cpp.o
+UnrealEngine: CMakeFiles/UnrealEngine.dir/src/Box.cpp.o
 UnrealEngine: CMakeFiles/UnrealEngine.dir/src/Engine.cpp.o
 UnrealEngine: CMakeFiles/UnrealEngine.dir/build.make
 UnrealEngine: /usr/lib/x86_64-linux-gnu/libGL.so
 UnrealEngine: /usr/lib/x86_64-linux-gnu/libGLU.so
 UnrealEngine: /usr/lib/x86_64-linux-gnu/libglut.so
 UnrealEngine: CMakeFiles/UnrealEngine.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/retr0/Documents/3ano2sem/cg/trabalho/phase1/code/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable UnrealEngine"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/retr0/Repositorios/CG2025-UMINHO/phase1/code/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable UnrealEngine"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/UnrealEngine.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -124,6 +140,6 @@ CMakeFiles/UnrealEngine.dir/clean:
 .PHONY : CMakeFiles/UnrealEngine.dir/clean
 
 CMakeFiles/UnrealEngine.dir/depend:
-	cd /home/retr0/Documents/3ano2sem/cg/trabalho/phase1/code/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/retr0/Documents/3ano2sem/cg/trabalho/phase1/code /home/retr0/Documents/3ano2sem/cg/trabalho/phase1/code /home/retr0/Documents/3ano2sem/cg/trabalho/phase1/code/build /home/retr0/Documents/3ano2sem/cg/trabalho/phase1/code/build /home/retr0/Documents/3ano2sem/cg/trabalho/phase1/code/build/CMakeFiles/UnrealEngine.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/retr0/Repositorios/CG2025-UMINHO/phase1/code/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/retr0/Repositorios/CG2025-UMINHO/phase1/code /home/retr0/Repositorios/CG2025-UMINHO/phase1/code /home/retr0/Repositorios/CG2025-UMINHO/phase1/code/build /home/retr0/Repositorios/CG2025-UMINHO/phase1/code/build /home/retr0/Repositorios/CG2025-UMINHO/phase1/code/build/CMakeFiles/UnrealEngine.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/UnrealEngine.dir/depend
 

@@ -1,4 +1,4 @@
-# Install script for directory: /home/retr0/Documents/3ano2sem/cg/trabalho/phase1/code
+# Install script for directory: /home/retr0/Repositorios/CG2025-UMINHO/phase1/code
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/retr0/Documents/3ano2sem/cg/trabalho/phase1/code/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/retr0/Repositorios/CG2025-UMINHO/phase1/code/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

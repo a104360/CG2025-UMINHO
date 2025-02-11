@@ -17,50 +17,44 @@ float tZ = 2;
 
 Plane * p = nullptr;
 
+Box * b = nullptr;
+
 void drawPlane(Plane p){
 	float unit = (float) p.getLength() / p.getDivisions();
     int pointsOnEdge = p.getDivisions() + 1;
     
-    std::vector<float> vertices;
-    std::vector<unsigned int> indices;
-
-    // Use float for precise vertex positions
-    for(float i = -(p.getLength()/2.0f); i <= (p.getLength()/2.0f + 0.0001f); i += unit) {
-        for(float j = -(p.getLength()/2.0f); j <= (p.getLength()/2.0f + 0.0001f); j += unit) {
-            vertices.push_back(i);
-            vertices.push_back(0);
-            vertices.push_back(j);
-        }
-    }
-
-    // Generate indices as before
-    for(int i = 0; i < p.getDivisions(); i++) {
-        for(int j = 0; j < p.getDivisions(); j++) {
-            int currentVertex = i * pointsOnEdge + j;
-            
-            indices.push_back(currentVertex);
-            indices.push_back(currentVertex + pointsOnEdge);
-            indices.push_back(currentVertex + pointsOnEdge + 1);
-            
-            indices.push_back(currentVertex);
-            indices.push_back(currentVertex + pointsOnEdge + 1);
-            indices.push_back(currentVertex + 1);
-        }
-    }
-    
     glColor3f(1,1,1);
     glBegin(GL_TRIANGLES);
-    for(size_t i = 0; i < indices.size(); i += 3) {
-        float* v1 = &vertices[indices[i] * 3];
-        float* v2 = &vertices[indices[i + 1] * 3];
-        float* v3 = &vertices[indices[i + 2] * 3];
-
+    for(size_t i = 0; i < p.indices.size(); i += 3) {
+        float* v1 = &p.vertices[p.indices[i] * 3];
+        float* v2 = &p.vertices[p.indices[i + 1] * 3];
+        float* v3 = &p.vertices[p.indices[i + 2] * 3];
+		
         glVertex3fv(v1);
         glVertex3fv(v2);
         glVertex3fv(v3);
     }
     glEnd();
 }
+
+void drawBox(Box b){
+	float unit = (float) b.getLength() / b.getDivisions();
+	int pointsOnEdge = p->getDivisions() + 1;
+	
+	glColor3f(1,1,1);
+	glBegin(GL_TRIANGLES);
+	for(size_t i = 0;i < b.indices.size();i+=3){
+		float* v1 = &b.vertices[b.indices[i] * 3];
+		float* v2 = &b.vertices[b.indices[i + 1] * 3];
+		float* v3 = &b.vertices[b.indices[i + 2] * 3];
+		
+		glVertex3fv(v1);
+		glVertex3fv(v2);
+		glVertex3fv(v3);
+	}
+	glEnd();
+}
+
 
 void changeSize(int w, int h) {
 
@@ -99,7 +93,8 @@ void display() {
 
     // Draw the plane
 
-    drawPlane(*p);
+    if(p != nullptr) drawPlane(*p);
+	if(b != nullptr) drawBox(*b);
 
     // Draw coordinate axes
     glBegin(GL_LINES);
@@ -222,7 +217,10 @@ int main(int argc, char** argv) {
     }
 
     p = new Plane();
-    p->load(argv[1]);
+    //p->load(argv[1]);
+
+	b = new Box();
+	b->load(argv[1]);
 
     glutInit(&argc, argv);
     glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA | GLUT_DEPTH);

@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/retr0/Documents/3ano2sem/cg/trabalho/phase1/code
+CMAKE_SOURCE_DIR = /home/retr0/Repositorios/CG2025-UMINHO/phase1/code
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/retr0/Documents/3ano2sem/cg/trabalho/phase1/code/build
+CMAKE_BINARY_DIR = /home/retr0/Repositorios/CG2025-UMINHO/phase1/code/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/retr0/Documents/3ano2sem/cg/trabalho/phase1/code/build/CMakeFiles /home/retr0/Documents/3ano2sem/cg/trabalho/phase1/code/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/retr0/Repositorios/CG2025-UMINHO/phase1/code/build/CMakeFiles /home/retr0/Repositorios/CG2025-UMINHO/phase1/code/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/retr0/Documents/3ano2sem/cg/trabalho/phase1/code/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/retr0/Repositorios/CG2025-UMINHO/phase1/code/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -141,6 +141,33 @@ UnrealEngine: cmake_check_build_system
 UnrealEngine/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/UnrealEngine.dir/build.make CMakeFiles/UnrealEngine.dir/build
 .PHONY : UnrealEngine/fast
+
+src/Box.o: src/Box.cpp.o
+.PHONY : src/Box.o
+
+# target to build an object file
+src/Box.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/src/Box.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UnrealEngine.dir/build.make CMakeFiles/UnrealEngine.dir/src/Box.cpp.o
+.PHONY : src/Box.cpp.o
+
+src/Box.i: src/Box.cpp.i
+.PHONY : src/Box.i
+
+# target to preprocess a source file
+src/Box.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/src/Box.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UnrealEngine.dir/build.make CMakeFiles/UnrealEngine.dir/src/Box.cpp.i
+.PHONY : src/Box.cpp.i
+
+src/Box.s: src/Box.cpp.s
+.PHONY : src/Box.s
+
+# target to generate assembly for a file
+src/Box.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/src/Box.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UnrealEngine.dir/build.make CMakeFiles/UnrealEngine.dir/src/Box.cpp.s
+.PHONY : src/Box.cpp.s
 
 src/Engine.o: src/Engine.cpp.o
 .PHONY : src/Engine.o
@@ -227,6 +254,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... UnrealEngine"
 	@echo "... generator"
+	@echo "... src/Box.o"
+	@echo "... src/Box.i"
+	@echo "... src/Box.s"
 	@echo "... src/Engine.o"
 	@echo "... src/Engine.i"
 	@echo "... src/Engine.s"

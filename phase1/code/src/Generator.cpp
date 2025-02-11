@@ -4,6 +4,7 @@
 #include <string>
 #include <cmath>
 #include "../include/Plane.h"
+#include "../include/Box.h"
 
 
 int main(int argc, char* argv[]) {
@@ -19,13 +20,19 @@ int main(int argc, char* argv[]) {
         int divisions = std::stoi(argv[3]);
         
         Plane * p = new Plane(size,divisions);
-
+        
         p->save(argv[4]);
-
+        
         return 0;
     }
-    if(type.compare("box")){
-        
+    if(type.compare("box") == 0){
+        float size = std::stof(argv[2]);
+        int divisions = std::stoi(argv[3]);
+
+        Box * b = new Box(size,divisions);
+
+        b->save(argv[4]);
+
         return 0;
     }
     if(type.compare("cone")){

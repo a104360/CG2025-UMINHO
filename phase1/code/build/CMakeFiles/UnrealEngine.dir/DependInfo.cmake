@@ -8,8 +8,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/retr0/Documents/3ano2sem/cg/trabalho/phase1/code/src/Engine.cpp" "CMakeFiles/UnrealEngine.dir/src/Engine.cpp.o" "gcc" "CMakeFiles/UnrealEngine.dir/src/Engine.cpp.o.d"
-  "/home/retr0/Documents/3ano2sem/cg/trabalho/phase1/code/src/Plane.cpp" "CMakeFiles/UnrealEngine.dir/src/Plane.cpp.o" "gcc" "CMakeFiles/UnrealEngine.dir/src/Plane.cpp.o.d"
+  "/home/retr0/Repositorios/CG2025-UMINHO/phase1/code/src/Box.cpp" "CMakeFiles/UnrealEngine.dir/src/Box.cpp.o" "gcc" "CMakeFiles/UnrealEngine.dir/src/Box.cpp.o.d"
+  "/home/retr0/Repositorios/CG2025-UMINHO/phase1/code/src/Engine.cpp" "CMakeFiles/UnrealEngine.dir/src/Engine.cpp.o" "gcc" "CMakeFiles/UnrealEngine.dir/src/Engine.cpp.o.d"
+  "/home/retr0/Repositorios/CG2025-UMINHO/phase1/code/src/Plane.cpp" "CMakeFiles/UnrealEngine.dir/src/Plane.cpp.o" "gcc" "CMakeFiles/UnrealEngine.dir/src/Plane.cpp.o.d"
   )
 
 # Targets to which this target links.

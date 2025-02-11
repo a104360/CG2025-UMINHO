@@ -73,41 +73,76 @@ void Plane::generatePlane(int length, int divisions) {
 
 void Plane::save(const char * filename){
     std::ofstream file(filename);
-    if(file.is_open()){
+    if (file.is_open()) {
+        // Write dimensions
         file << length << '\n';
         file << divisions << '\n';
-        for(float f : vertices){
-            file << f << " ";
+        
+        // Write number of vertices and indices first
+        file << vertices.size() << '\n';
+        file << indices.size() << '\n';
+        
+        // Write vertices with full precision
+        for (float f : vertices) {
+            file << f << ' ';
         }
         file << '\n';
-        for(unsigned int n : indices){
-            file << n << " ";
+        
+        // Write indices
+        for (unsigned int n : indices) {
+            file << n << ' ';
         }
         file.close();
     } else {
-        std::cerr << "Erro no ficheiro";
+        std::cerr << "Error opening file for writing: " << filename << std::endl;
     }
 }   
 
 void Plane::load(const char * filename){
     std::ifstream file(filename);
-    if(file.is_open()){
+    if (file.is_open()) {
+        // Clear existing data
+        vertices.clear();
+        indices.clear();
+        
+        // Read dimensions
         file >> length;
         file >> divisions;
-        int num;
-        bool firstVector = true;
-        while(file>>num){
-            if(file.peek() == '\n')
-            {
-                firstVector = false;
-                file.ignore();
-                continue;
-            }
-            if(firstVector) vertices.push_back(num);
-            else indices.push_back(num);
+        
+        // Read vector sizes
+        size_t vertSize, indSize;
+        file >> vertSize;
+        file >> indSize;
+        
+        // Read vertices
+        float vertValue;
+        for (size_t i = 0; i < vertSize; i++) {
+            file >> vertValue;
+            vertices.push_back(vertValue);
         }
+        
+        // Read indices
+        unsigned int indValue;
+        for (size_t i = 0; i < indSize; i++) {
+            file >> indValue;
+            indices.push_back(indValue);
+        }
+        
         file.close();
     } else {
-        std::cerr << "Unable to open file";
+        std::cerr << "Error opening file for reading: " << filename << std::endl;
+    }
+}
+
+
+void Plane::debug(){
+    std::cout << "###############DEBUG##################" << std::endl;
+    std::cout << "VERTICES" << std::endl;
+    for(auto a : vertices){
+        std::cout << a << std::endl; 
+    }
+    std::cout << "INDICES" << std::endl;
+    for(auto a : indices){
+        std::cout << a << std::endl; 
     }
 }

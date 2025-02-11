@@ -1,22 +1,21 @@
 #include <vector>
-#ifndef PLANE_H
-#define PLANE_H
+#ifndef BOX_H
+#define BOX_H 
 
-class Plane{
+class Box{
     private:
         int length;
-        int divisions;
+        int division;
     public:
         std::vector<float> vertices;
         std::vector<unsigned int> indices;
-        Plane(int,int);
-        Plane();
+        Box();
+        Box(int,int);
         int getLength();
         int getDivisions();
-        void generatePlane(int,int);
-        void save(const char *);
+        void generateBox(int,int);
         void load(const char *);
-        void debug();
+        void save(const char *);
 };
 
 #endif

@@ -1,4 +1,4 @@
-/home/retr0/Documents/3ano2sem/cg/trabalho/phase1/code/build/CMakeFiles/generator.dir
-/home/retr0/Documents/3ano2sem/cg/trabalho/phase1/code/build/CMakeFiles/UnrealEngine.dir
-/home/retr0/Documents/3ano2sem/cg/trabalho/phase1/code/build/CMakeFiles/edit_cache.dir
-/home/retr0/Documents/3ano2sem/cg/trabalho/phase1/code/build/CMakeFiles/rebuild_cache.dir
+/home/retr0/Repositorios/CG2025-UMINHO/phase1/code/build/CMakeFiles/generator.dir
+/home/retr0/Repositorios/CG2025-UMINHO/phase1/code/build/CMakeFiles/UnrealEngine.dir
+/home/retr0/Repositorios/CG2025-UMINHO/phase1/code/build/CMakeFiles/edit_cache.dir
+/home/retr0/Repositorios/CG2025-UMINHO/phase1/code/build/CMakeFiles/rebuild_cache.dir

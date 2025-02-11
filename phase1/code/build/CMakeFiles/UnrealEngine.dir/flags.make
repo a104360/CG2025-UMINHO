@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/retr0/Documents/3ano2sem/cg/trabalho/phase1/code/include
+CXX_INCLUDES = -I/home/retr0/Repositorios/CG2025-UMINHO/phase1/code/include
 
 CXX_FLAGS = -Wall -Wextra -Wpedantic
 
