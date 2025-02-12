@@ -1,13 +1,14 @@
 #include <vector>
 #ifndef CONE_H
 #define CONE_H 
+#include "Figure.h"
 
-class Cone{
+class Cone: public Figure{
     private:
         float radius;
         float height;
-        std::vector<float> vertices;
-        std::vector<unsigned int> indices;
+        //std::vector<float> vertices;
+        //std::vector<unsigned int> indices;
     public:
         Cone();
         Cone(float,float);

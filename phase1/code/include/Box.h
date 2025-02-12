@@ -1,14 +1,15 @@
 #include <vector>
 #ifndef BOX_H
-#define BOX_H 
+#define BOX_H
+#include "Figure.h"
 
-class Box{
+class Box : public Figure{
     private:
         int length;
         int division;
     public:
-        std::vector<float> vertices;
-        std::vector<unsigned int> indices;
+        //std::vector<float> vertices;
+        //std::vector<unsigned int> indices;
         Box();
         Box(int,int);
         int getLength();

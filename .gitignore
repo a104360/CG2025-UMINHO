@@ -30,3 +30,6 @@
 *.exe
 *.out
 *.app
+
+
+./phase1/code/build/*

@@ -9,6 +9,7 @@ set(OpenGL_GL_PREFERENCE LEGACY)
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
 add_executable(generator
+    src/Figure.cpp
     src/Plane.cpp
     src/Box.cpp
     src/Cone.cpp
@@ -16,6 +17,7 @@ add_executable(generator
 )
 
 add_executable(${PROJECT_NAME}
+    src/Figure.cpp
     src/Plane.cpp
     src/Box.cpp
     src/Cone.cpp

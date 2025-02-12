@@ -5,6 +5,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/UnrealEngine.dir/src/Cone.cpp.o.d"
   "CMakeFiles/UnrealEngine.dir/src/Engine.cpp.o"
   "CMakeFiles/UnrealEngine.dir/src/Engine.cpp.o.d"
+  "CMakeFiles/UnrealEngine.dir/src/Figure.cpp.o"
+  "CMakeFiles/UnrealEngine.dir/src/Figure.cpp.o.d"
   "CMakeFiles/UnrealEngine.dir/src/Plane.cpp.o"
   "CMakeFiles/UnrealEngine.dir/src/Plane.cpp.o.d"
   "UnrealEngine"

@@ -104,20 +104,27 @@ std::vector<unsigned int>& Cone::getIndices(){
 void Cone::save(const char * filename){
     std::ofstream file(filename);
     if(file.is_open()){
+
+        saveType(file);
+
         file << radius << '\n';
         file << height << '\n';
 
+        saveVectors(file);
+
+        /*
         file << this->vertices.size() << '\n';
         file << this->indices.size() << '\n';
-
+        
         for(float f : this->vertices){
             file << f << " ";
         }
         file << '\n';
-
+        
         for(unsigned int n : indices){
             file << n << " ";
         }
+        */
         file.close();
         
     } else {
@@ -128,28 +135,33 @@ void Cone::save(const char * filename){
 void Cone::load(const char * filename){
     std::ifstream file(filename);
     if(file.is_open()){
-
+        
         vertices.clear();
         indices.clear();
+
+        loadType(file);
 
         file >> radius;
         file >> height;
 
+        loadVectors(file);
+        /*
         size_t vertSize,indiSize;
         file >> vertSize;
         file >> indiSize;
-
+        
         float vertValue;
         for(size_t i = 0;i < vertSize;i++){
             file >> vertValue;
             this->vertices.push_back(vertValue);
         }
-
+        
         unsigned int indiValue;
         for(size_t i = 0;i < indiSize;i++){
             file >> indiValue;
             indices.push_back(indiValue);
         }
+        */
         
         file.close();
     } else {

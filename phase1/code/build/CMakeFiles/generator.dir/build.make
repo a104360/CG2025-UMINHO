@@ -69,10 +69,24 @@ include CMakeFiles/generator.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/generator.dir/flags.make
 
+CMakeFiles/generator.dir/src/Figure.cpp.o: CMakeFiles/generator.dir/flags.make
+CMakeFiles/generator.dir/src/Figure.cpp.o: /home/retr0/Repositorios/CG2025-UMINHO/phase1/code/src/Figure.cpp
+CMakeFiles/generator.dir/src/Figure.cpp.o: CMakeFiles/generator.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/retr0/Repositorios/CG2025-UMINHO/phase1/code/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/generator.dir/src/Figure.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/generator.dir/src/Figure.cpp.o -MF CMakeFiles/generator.dir/src/Figure.cpp.o.d -o CMakeFiles/generator.dir/src/Figure.cpp.o -c /home/retr0/Repositorios/CG2025-UMINHO/phase1/code/src/Figure.cpp
+
+CMakeFiles/generator.dir/src/Figure.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/generator.dir/src/Figure.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/retr0/Repositorios/CG2025-UMINHO/phase1/code/src/Figure.cpp > CMakeFiles/generator.dir/src/Figure.cpp.i
+
+CMakeFiles/generator.dir/src/Figure.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/generator.dir/src/Figure.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/retr0/Repositorios/CG2025-UMINHO/phase1/code/src/Figure.cpp -o CMakeFiles/generator.dir/src/Figure.cpp.s
+
 CMakeFiles/generator.dir/src/Plane.cpp.o: CMakeFiles/generator.dir/flags.make
 CMakeFiles/generator.dir/src/Plane.cpp.o: /home/retr0/Repositorios/CG2025-UMINHO/phase1/code/src/Plane.cpp
 CMakeFiles/generator.dir/src/Plane.cpp.o: CMakeFiles/generator.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/retr0/Repositorios/CG2025-UMINHO/phase1/code/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/generator.dir/src/Plane.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/retr0/Repositorios/CG2025-UMINHO/phase1/code/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/generator.dir/src/Plane.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/generator.dir/src/Plane.cpp.o -MF CMakeFiles/generator.dir/src/Plane.cpp.o.d -o CMakeFiles/generator.dir/src/Plane.cpp.o -c /home/retr0/Repositorios/CG2025-UMINHO/phase1/code/src/Plane.cpp
 
 CMakeFiles/generator.dir/src/Plane.cpp.i: cmake_force
@@ -86,7 +100,7 @@ CMakeFiles/generator.dir/src/Plane.cpp.s: cmake_force
 CMakeFiles/generator.dir/src/Box.cpp.o: CMakeFiles/generator.dir/flags.make
 CMakeFiles/generator.dir/src/Box.cpp.o: /home/retr0/Repositorios/CG2025-UMINHO/phase1/code/src/Box.cpp
 CMakeFiles/generator.dir/src/Box.cpp.o: CMakeFiles/generator.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/retr0/Repositorios/CG2025-UMINHO/phase1/code/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/generator.dir/src/Box.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/retr0/Repositorios/CG2025-UMINHO/phase1/code/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/generator.dir/src/Box.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/generator.dir/src/Box.cpp.o -MF CMakeFiles/generator.dir/src/Box.cpp.o.d -o CMakeFiles/generator.dir/src/Box.cpp.o -c /home/retr0/Repositorios/CG2025-UMINHO/phase1/code/src/Box.cpp
 
 CMakeFiles/generator.dir/src/Box.cpp.i: cmake_force
@@ -100,7 +114,7 @@ CMakeFiles/generator.dir/src/Box.cpp.s: cmake_force
 CMakeFiles/generator.dir/src/Cone.cpp.o: CMakeFiles/generator.dir/flags.make
 CMakeFiles/generator.dir/src/Cone.cpp.o: /home/retr0/Repositorios/CG2025-UMINHO/phase1/code/src/Cone.cpp
 CMakeFiles/generator.dir/src/Cone.cpp.o: CMakeFiles/generator.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/retr0/Repositorios/CG2025-UMINHO/phase1/code/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/generator.dir/src/Cone.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/retr0/Repositorios/CG2025-UMINHO/phase1/code/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/generator.dir/src/Cone.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/generator.dir/src/Cone.cpp.o -MF CMakeFiles/generator.dir/src/Cone.cpp.o.d -o CMakeFiles/generator.dir/src/Cone.cpp.o -c /home/retr0/Repositorios/CG2025-UMINHO/phase1/code/src/Cone.cpp
 
 CMakeFiles/generator.dir/src/Cone.cpp.i: cmake_force
@@ -114,7 +128,7 @@ CMakeFiles/generator.dir/src/Cone.cpp.s: cmake_force
 CMakeFiles/generator.dir/src/Generator.cpp.o: CMakeFiles/generator.dir/flags.make
 CMakeFiles/generator.dir/src/Generator.cpp.o: /home/retr0/Repositorios/CG2025-UMINHO/phase1/code/src/Generator.cpp
 CMakeFiles/generator.dir/src/Generator.cpp.o: CMakeFiles/generator.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/retr0/Repositorios/CG2025-UMINHO/phase1/code/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/generator.dir/src/Generator.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/retr0/Repositorios/CG2025-UMINHO/phase1/code/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/generator.dir/src/Generator.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/generator.dir/src/Generator.cpp.o -MF CMakeFiles/generator.dir/src/Generator.cpp.o.d -o CMakeFiles/generator.dir/src/Generator.cpp.o -c /home/retr0/Repositorios/CG2025-UMINHO/phase1/code/src/Generator.cpp
 
 CMakeFiles/generator.dir/src/Generator.cpp.i: cmake_force
@@ -127,6 +141,7 @@ CMakeFiles/generator.dir/src/Generator.cpp.s: cmake_force
 
 # Object files for target generator
 generator_OBJECTS = \
+"CMakeFiles/generator.dir/src/Figure.cpp.o" \
 "CMakeFiles/generator.dir/src/Plane.cpp.o" \
 "CMakeFiles/generator.dir/src/Box.cpp.o" \
 "CMakeFiles/generator.dir/src/Cone.cpp.o" \
@@ -135,13 +150,14 @@ generator_OBJECTS = \
 # External object files for target generator
 generator_EXTERNAL_OBJECTS =
 
+generator: CMakeFiles/generator.dir/src/Figure.cpp.o
 generator: CMakeFiles/generator.dir/src/Plane.cpp.o
 generator: CMakeFiles/generator.dir/src/Box.cpp.o
 generator: CMakeFiles/generator.dir/src/Cone.cpp.o
 generator: CMakeFiles/generator.dir/src/Generator.cpp.o
 generator: CMakeFiles/generator.dir/build.make
 generator: CMakeFiles/generator.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/retr0/Repositorios/CG2025-UMINHO/phase1/code/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable generator"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/retr0/Repositorios/CG2025-UMINHO/phase1/code/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable generator"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/generator.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

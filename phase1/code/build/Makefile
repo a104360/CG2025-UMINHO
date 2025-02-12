@@ -220,6 +220,33 @@ src/Engine.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/UnrealEngine.dir/build.make CMakeFiles/UnrealEngine.dir/src/Engine.cpp.s
 .PHONY : src/Engine.cpp.s
 
+src/Figure.o: src/Figure.cpp.o
+.PHONY : src/Figure.o
+
+# target to build an object file
+src/Figure.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/src/Figure.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UnrealEngine.dir/build.make CMakeFiles/UnrealEngine.dir/src/Figure.cpp.o
+.PHONY : src/Figure.cpp.o
+
+src/Figure.i: src/Figure.cpp.i
+.PHONY : src/Figure.i
+
+# target to preprocess a source file
+src/Figure.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/src/Figure.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UnrealEngine.dir/build.make CMakeFiles/UnrealEngine.dir/src/Figure.cpp.i
+.PHONY : src/Figure.cpp.i
+
+src/Figure.s: src/Figure.cpp.s
+.PHONY : src/Figure.s
+
+# target to generate assembly for a file
+src/Figure.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/src/Figure.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UnrealEngine.dir/build.make CMakeFiles/UnrealEngine.dir/src/Figure.cpp.s
+.PHONY : src/Figure.cpp.s
+
 src/Generator.o: src/Generator.cpp.o
 .PHONY : src/Generator.o
 
@@ -290,6 +317,9 @@ help:
 	@echo "... src/Engine.o"
 	@echo "... src/Engine.i"
 	@echo "... src/Engine.s"
+	@echo "... src/Figure.o"
+	@echo "... src/Figure.i"
+	@echo "... src/Figure.s"
 	@echo "... src/Generator.o"
 	@echo "... src/Generator.i"
 	@echo "... src/Generator.s"

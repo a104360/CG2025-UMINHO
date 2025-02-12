@@ -88,9 +88,13 @@ void Box::generateBox(int length, int divisions) {
 void Box::save(const char * filename){
     std::ofstream file(filename);
     if(file.is_open()){
+        saveType(file);
+
         file << length << '\n';
         file << division << '\n';
 
+        saveVectors(file);
+        /*
         file << vertices.size() << '\n';
         file << indices.size() << '\n';
 
@@ -100,7 +104,7 @@ void Box::save(const char * filename){
         file << '\n';
         for(unsigned int n : indices){
             file << n << " ";
-        }
+        }*/
         file.close();
     } else {
         std::cerr << "Erro no ficheiro";
@@ -114,10 +118,15 @@ void Box::load(const char * filename){
 
         vertices.clear();
         indices.clear();
-
+        
+        loadType(file);
+        
         file >> length;
         file >> division;
 
+        loadVectors(file);
+
+        /*
         size_t vertSize, indiSize;
         file >> vertSize;
         file >> indiSize;
@@ -127,12 +136,13 @@ void Box::load(const char * filename){
             file >> vertValue;
             vertices.push_back(vertValue);
         }
-
+        
         unsigned int indiValue;
         for(size_t i = 0;i < indiSize;i++){
             file >> indiValue;
             indices.push_back(indiValue);
         }
+        */
         file.close();
     } else {
         std::cerr << "Unable to open file";

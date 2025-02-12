@@ -5,15 +5,24 @@
 #include <math.h>
 #include "../include/Engine.h"
 
+float angleX = 0;
 float angleY = M_PI / 2;
 float angleZ = 0;
 float radius = sqrt(75);
 float centerX = 0;
 float centerY = 0;
 float centerZ = 0;
-float tX = 2;
-float tY = 2;
-float tZ = 2;
+float tX = 0;
+float tY = 0;
+float tZ = 0;
+float rX = 0;
+float rY = 0;
+float rZ = 0;
+
+float sY = 1.0f;
+
+int lastX = -1;
+int lastY = -1;
 
 Plane * p = nullptr;
 
@@ -26,7 +35,7 @@ void drawPlane(Plane p){
     int pointsOnEdge = p.getDivisions() + 1;
     
     glColor3f(1,1,1);
-    glBegin(GL_TRIANGLES);
+	glBegin(GL_TRIANGLES);
     for(size_t i = 0; i < p.indices.size(); i += 3) {
         float* v1 = &p.vertices[p.indices[i] * 3];
         float* v2 = &p.vertices[p.indices[i + 1] * 3];
@@ -76,6 +85,8 @@ void drawCone(Cone c){
 	glEnd();
 }
 
+
+
 void changeSize(int w, int h) {
 
 	// Prevent a divide by zero, when window is too short
@@ -101,23 +112,8 @@ void changeSize(int w, int h) {
 	glMatrixMode(GL_MODELVIEW);
 }
 
-
-void display() {
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-    glLoadIdentity();
-    
-    // Position camera
-    gluLookAt(tX + (radius * cos(angleY)),tY + (radius * sin(angleZ)), tZ + (radius * sin(angleY)), 
-		      centerX,centerY,centerZ,
-			  0.0f,1.0f,0.0f);
-
-    // Draw the plane
-
-    if(p != nullptr) drawPlane(*p);
-	if(b != nullptr) drawBox(*b);
-	if(c != nullptr) drawCone(*c);
-
-    // Draw coordinate axes
+void drawAxis(){
+	// Draw coordinate axes
     glBegin(GL_LINES);
     // X axis (red)
     glColor3f(1.0f, 0.0f, 0.0f);
@@ -132,6 +128,35 @@ void display() {
     glVertex3f(0.0f, 0.0f, 0.0f);
     glVertex3f(0.0f, 0.0f, 1.0f);
     glEnd();
+}
+
+void display() {
+	// clear buffers
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+	// set the camera
+	glLoadIdentity();
+	// Camera position is now calculated based on angles and radius
+    float eyeX = radius * cos(angleY);
+    float eyeY = radius * sin(angleZ);
+    float eyeZ = radius * sin(angleY);
+    
+    gluLookAt(eyeX, eyeY, eyeZ,  // Fixed camera position
+              centerX, centerY, centerZ,  // Movable center point
+              0.0f, 1.0f, 0.0f);
+
+    // Draw the plane
+	
+    drawAxis();
+
+	glTranslatef(tX,tY,tZ);	
+	glRotatef(angleX,rX,rY,rZ);
+	glScalef(1.0f,sY,1.0f);
+		
+    if(p != nullptr) drawPlane(*p);
+	if(b != nullptr) drawBox(*b);
+	if(c != nullptr) drawCone(*c);
+
 
     glutSwapBuffers();
 }
@@ -157,7 +182,6 @@ void line(){
 void point(){
 	glPolygonMode(GL_FRONT_AND_BACK,GL_POINT);
 }
-
 
 void rotate(int key_code,int x,int y){
 	switch (key_code)
@@ -212,11 +236,25 @@ void normal(unsigned char key,int x,int y){
 		tX -= 1.0f;
 		break;
 	case 'e':
-		centerY += 0.05f;
+		angleX += 1.0f;
+		rY += 1.0f;
 		break;
 	case 'q':
-		centerY -= 0.05f;
-		break; 	 
+		angleX -= 1.0f;
+		rY -= 0.05f;
+		break;
+	case 'i':
+		tY += 1.0f;
+		break;
+	case 'k':
+		tY -= 1.0f;
+		break;
+	case 'u':
+		sY += 1.0f;
+		break;
+	case 'j':
+		sY -= 1.0f;
+		break;
 	case '+':
 		radius -= 0.05f;
 		break;
@@ -229,6 +267,28 @@ void normal(unsigned char key,int x,int y){
 	glutPostRedisplay();
 }
 
+void moveCamera(int x,int y){
+	if(lastX == -1) {
+        lastX = x;
+        lastY = y;
+        return;
+    }
+    
+    // Calculate deltas
+    float deltaX = (x - lastX) * 0.01f;
+    float deltaY = (y - lastY) * 0.01f;
+    
+    // Update center point based on mouse movement
+    centerX += deltaX;
+    centerY -= deltaY;  // Inverted Y for more natural feel
+    
+    // Update last positions
+    lastX = x;
+    lastY = y;
+    
+    glutPostRedisplay();
+}
+
 
 
 int main(int argc, char** argv) {
@@ -238,13 +298,13 @@ int main(int argc, char** argv) {
     }
 
     p = new Plane();
-    //p->load(argv[1]);
+    p->load(argv[1]);
 
 	b = new Box();
 	//b->load(argv[1]);
 
 	c = new Cone();
-	c->load(argv[1]);
+	//c->load(argv[1]);
 
     glutInit(&argc, argv);
     glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA | GLUT_DEPTH);

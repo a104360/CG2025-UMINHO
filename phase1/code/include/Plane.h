@@ -1,14 +1,15 @@
 #include <vector>
 #ifndef PLANE_H
 #define PLANE_H
+#include "Figure.h"
 
-class Plane{
+class Plane: public Figure{
     private:
         int length;
         int divisions;
     public:
-        std::vector<float> vertices;
-        std::vector<unsigned int> indices;
+        //std::vector<float> vertices;
+        //std::vector<unsigned int> indices;
         Plane(int,int);
         Plane();
         int getLength();
