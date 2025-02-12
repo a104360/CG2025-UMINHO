@@ -169,6 +169,33 @@ src/Box.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/UnrealEngine.dir/build.make CMakeFiles/UnrealEngine.dir/src/Box.cpp.s
 .PHONY : src/Box.cpp.s
 
+src/Cone.o: src/Cone.cpp.o
+.PHONY : src/Cone.o
+
+# target to build an object file
+src/Cone.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/src/Cone.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UnrealEngine.dir/build.make CMakeFiles/UnrealEngine.dir/src/Cone.cpp.o
+.PHONY : src/Cone.cpp.o
+
+src/Cone.i: src/Cone.cpp.i
+.PHONY : src/Cone.i
+
+# target to preprocess a source file
+src/Cone.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/src/Cone.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UnrealEngine.dir/build.make CMakeFiles/UnrealEngine.dir/src/Cone.cpp.i
+.PHONY : src/Cone.cpp.i
+
+src/Cone.s: src/Cone.cpp.s
+.PHONY : src/Cone.s
+
+# target to generate assembly for a file
+src/Cone.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/src/Cone.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UnrealEngine.dir/build.make CMakeFiles/UnrealEngine.dir/src/Cone.cpp.s
+.PHONY : src/Cone.cpp.s
+
 src/Engine.o: src/Engine.cpp.o
 .PHONY : src/Engine.o
 
@@ -257,6 +284,9 @@ help:
 	@echo "... src/Box.o"
 	@echo "... src/Box.i"
 	@echo "... src/Box.s"
+	@echo "... src/Cone.o"
+	@echo "... src/Cone.i"
+	@echo "... src/Cone.s"
 	@echo "... src/Engine.o"
 	@echo "... src/Engine.i"
 	@echo "... src/Engine.s"

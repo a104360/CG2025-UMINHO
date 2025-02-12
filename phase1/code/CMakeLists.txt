@@ -11,12 +11,14 @@ set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 add_executable(generator
     src/Plane.cpp
     src/Box.cpp
+    src/Cone.cpp
     src/Generator.cpp
 )
 
 add_executable(${PROJECT_NAME}
     src/Plane.cpp
     src/Box.cpp
+    src/Cone.cpp
     src/Engine.cpp
 )
 

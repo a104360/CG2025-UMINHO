@@ -2,13 +2,14 @@
 #define ENGINE_H 
 #include "Plane.h"
 #include "Box.h"
+#include "Cone.h"
 
 void drawPlane(Plane);
 
 void drawBox(Box);
 
+void drawCone(Cone);
 // Todo 
-void drawCone();
 void drawSphere();
 
 #endif

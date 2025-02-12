@@ -19,6 +19,8 @@ Plane * p = nullptr;
 
 Box * b = nullptr;
 
+Cone * c = nullptr;
+
 void drawPlane(Plane p){
 	float unit = (float) p.getLength() / p.getDivisions();
     int pointsOnEdge = p.getDivisions() + 1;
@@ -55,6 +57,24 @@ void drawBox(Box b){
 	glEnd();
 }
 
+
+void drawCone(Cone c){
+	std::vector<float> vertices = c.getVertices();
+	std::vector<unsigned int> indices = c.getIndices();
+
+	glColor3f(1,1,1);
+	glBegin(GL_TRIANGLES);
+	for(size_t i = 0;i < indices.size();i+=3){
+		float* v1 = &vertices[indices[i] * 3];
+		float* v2 = &vertices[indices[i + 1] * 3];
+		float* v3 = &vertices[indices[i + 2] * 3];
+		
+		glVertex3fv(v1);
+		glVertex3fv(v2);
+		glVertex3fv(v3);
+	}
+	glEnd();
+}
 
 void changeSize(int w, int h) {
 
@@ -95,6 +115,7 @@ void display() {
 
     if(p != nullptr) drawPlane(*p);
 	if(b != nullptr) drawBox(*b);
+	if(c != nullptr) drawCone(*c);
 
     // Draw coordinate axes
     glBegin(GL_LINES);
@@ -220,7 +241,10 @@ int main(int argc, char** argv) {
     //p->load(argv[1]);
 
 	b = new Box();
-	b->load(argv[1]);
+	//b->load(argv[1]);
+
+	c = new Cone();
+	c->load(argv[1]);
 
     glutInit(&argc, argv);
     glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA | GLUT_DEPTH);
