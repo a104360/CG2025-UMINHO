@@ -28,7 +28,7 @@ void Sphere::generateSphere(int radius, int slices, int stacks) {
         // y is the radius subtracted by the amount of stackHeight
         float y = radius - (i * stackHeight);
         // The stack radius is calculated with Pythagorean Theorem
-        float stackRadius = sqrt(radius * radius - y * y);
+        float stackRadius = sqrt(pow(radius,2) -  pow(y,2));
 
         for(int j = 0; j < slices; j++) {
             float theta = (2.0f * M_PI * j) / slices;

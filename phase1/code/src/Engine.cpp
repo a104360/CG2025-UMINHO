@@ -49,11 +49,11 @@ void drawFigure(Figure b){
         float* v3 = &b.vertices[b.indices[i + 2] * 3];
         
         // Generate random values for a, b, and c (between 0 and 1)
-        float a = static_cast<float>(rand()) / RAND_MAX;
-        float b = static_cast<float>(rand()) / RAND_MAX;
-        float c = static_cast<float>(rand()) / RAND_MAX;
+        //float a = static_cast<float>(rand()) / RAND_MAX;
+        //float b = static_cast<float>(rand()) / RAND_MAX;
+        //float c = static_cast<float>(rand()) / RAND_MAX;
 
-        glColor3f(a, b, c);
+        glColor3f(1,1,1);
         glVertex3fv(v1);
         glVertex3fv(v2);
         glVertex3fv(v3);
@@ -314,7 +314,7 @@ int main(int argc, char** argv) {
     glutInit(&argc, argv);
     glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA | GLUT_DEPTH);
     glutInitWindowSize(800, 600);
-    glutCreateWindow("Plane Viewer");
+    glutCreateWindow("Unreal engine");
 
     glEnable(GL_DEPTH_TEST);
     glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
@@ -323,6 +323,11 @@ int main(int argc, char** argv) {
     glutReshapeFunc(reshape);
     glutSpecialFunc(rotate);
 	glutKeyboardFunc(normal);
+
+	glEnable(GL_DEPTH_TEST);
+	glEnable(GL_CULL_FACE);
+	glFrontFace(GL_CW);
+	glPolygonMode(GL_FRONT_FACE,GL_FILL);
 
     glutPostRedisplay();
 
