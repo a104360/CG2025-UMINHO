@@ -32,4 +32,4 @@
 *.app
 
 
-./phase1/code/build/*
+phase1/code/build/

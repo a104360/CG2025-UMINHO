@@ -6,6 +6,7 @@
 #include "../include/Plane.h"
 #include "../include/Box.h"
 #include "../include/Cone.h"
+#include "../include/Sphere.h"
 
 
 int main(int argc, char* argv[]) {
@@ -53,8 +54,16 @@ int main(int argc, char* argv[]) {
 
         return 0;
     }
-    if(type.compare("sphere")){
-        
+    if(type.compare("sphere") == 0){
+        float radius = std::stof(argv[2]);
+        int slices = std::stof(argv[3]);
+        int stacks = std::stof(argv[4]);
+
+        Sphere * s = new Sphere(radius);
+
+        s->generateSphere(radius,slices,stacks);
+
+        s->save(argv[5]);
         return 0;
     }
     std::cerr << "Error: Only plane type is supported" << std::endl;

@@ -2,19 +2,25 @@
 #include <vector>
 #include <fstream>
 #include <iostream>
+#include <cstdlib>
+#include <cstring>
 #include <math.h>
 #include "../include/Engine.h"
 
 float angleX = 0;
 float angleY = M_PI / 2;
 float angleZ = 0;
+
 float radius = sqrt(75);
+
 float centerX = 0;
 float centerY = 0;
 float centerZ = 0;
+
 float tX = 0;
 float tY = 0;
 float tZ = 0;
+
 float rX = 0;
 float rY = 0;
 float rZ = 0;
@@ -24,67 +30,36 @@ float sY = 1.0f;
 int lastX = -1;
 int lastY = -1;
 
+
 Plane * p = nullptr;
 
 Box * b = nullptr;
 
 Cone * c = nullptr;
 
-void drawPlane(Plane p){
-	float unit = (float) p.getLength() / p.getDivisions();
-    int pointsOnEdge = p.getDivisions() + 1;
+Sphere * s = nullptr;
+
+void drawFigure(Figure b){
+	srand(time(0));
     
-    glColor3f(1,1,1);
-	glBegin(GL_TRIANGLES);
-    for(size_t i = 0; i < p.indices.size(); i += 3) {
-        float* v1 = &p.vertices[p.indices[i] * 3];
-        float* v2 = &p.vertices[p.indices[i + 1] * 3];
-        float* v3 = &p.vertices[p.indices[i + 2] * 3];
-		
+    glBegin(GL_TRIANGLES);
+    for(size_t i = 0; i < b.indices.size(); i += 3){
+        float* v1 = &b.vertices[b.indices[i] * 3];
+        float* v2 = &b.vertices[b.indices[i + 1] * 3];
+        float* v3 = &b.vertices[b.indices[i + 2] * 3];
+        
+        // Generate random values for a, b, and c (between 0 and 1)
+        float a = static_cast<float>(rand()) / RAND_MAX;
+        float b = static_cast<float>(rand()) / RAND_MAX;
+        float c = static_cast<float>(rand()) / RAND_MAX;
+
+        glColor3f(a, b, c);
         glVertex3fv(v1);
         glVertex3fv(v2);
         glVertex3fv(v3);
     }
     glEnd();
 }
-
-void drawBox(Box b){
-	float unit = (float) b.getLength() / b.getDivisions();
-	int pointsOnEdge = p->getDivisions() + 1;
-	
-	glColor3f(1,1,1);
-	glBegin(GL_TRIANGLES);
-	for(size_t i = 0;i < b.indices.size();i+=3){
-		float* v1 = &b.vertices[b.indices[i] * 3];
-		float* v2 = &b.vertices[b.indices[i + 1] * 3];
-		float* v3 = &b.vertices[b.indices[i + 2] * 3];
-		
-		glVertex3fv(v1);
-		glVertex3fv(v2);
-		glVertex3fv(v3);
-	}
-	glEnd();
-}
-
-
-void drawCone(Cone c){
-	std::vector<float> vertices = c.getVertices();
-	std::vector<unsigned int> indices = c.getIndices();
-
-	glColor3f(1,1,1);
-	glBegin(GL_TRIANGLES);
-	for(size_t i = 0;i < indices.size();i+=3){
-		float* v1 = &vertices[indices[i] * 3];
-		float* v2 = &vertices[indices[i + 1] * 3];
-		float* v3 = &vertices[indices[i + 2] * 3];
-		
-		glVertex3fv(v1);
-		glVertex3fv(v2);
-		glVertex3fv(v3);
-	}
-	glEnd();
-}
-
 
 
 void changeSize(int w, int h) {
@@ -153,9 +128,10 @@ void display() {
 	glRotatef(angleX,rX,rY,rZ);
 	glScalef(1.0f,sY,1.0f);
 		
-    if(p != nullptr) drawPlane(*p);
-	if(b != nullptr) drawBox(*b);
-	if(c != nullptr) drawCone(*c);
+    if(p != nullptr) drawFigure(*p);
+	if(b != nullptr) drawFigure(*b);
+	if(c != nullptr) drawFigure(*c);
+	if(s != nullptr) drawFigure(*s);
 
 
     glutSwapBuffers();
@@ -183,7 +159,7 @@ void point(){
 	glPolygonMode(GL_FRONT_AND_BACK,GL_POINT);
 }
 
-void rotate(int key_code,int x,int y){
+void rotate(int key_code,int,int){
 	switch (key_code)
 	{
 	case GLUT_KEY_LEFT:
@@ -207,7 +183,7 @@ void rotate(int key_code,int x,int y){
 }
 
 
-void normal(unsigned char key,int x,int y){
+void normal(unsigned char key,int,int){
 	switch (key)
 	{
 	case '1':
@@ -289,6 +265,19 @@ void moveCamera(int x,int y){
     glutPostRedisplay();
 }
 
+std::string getFigureType(const char * filename){
+	std::string t = "";
+	std::ifstream file(filename);
+	if(file.is_open()){
+		file >> t;
+		file.close();
+		return t;
+	} else {
+		std::cerr << "File error" << std::endl;
+		return "";
+	}
+	return "";
+}
 
 
 int main(int argc, char** argv) {
@@ -296,15 +285,31 @@ int main(int argc, char** argv) {
         std::cerr << "Usage: " << argv[0] << " <model_file>" << std::endl;
         return 1;
     }
+	size_t filenameSize = strlen(argv[1]);
+	if(argv[1][filenameSize - 3] != '.' || argv[1][filenameSize - 2] != '3' || argv[1][filenameSize - 1] != 'd'){
+		std::cerr << "File is not valid. The file must be a .3d file." << std::endl;
+		return 2;
+	}
+	
+	srand((unsigned)time(NULL));
 
-    p = new Plane();
-    p->load(argv[1]);
-
-	b = new Box();
-	//b->load(argv[1]);
-
-	c = new Cone();
-	//c->load(argv[1]);
+	std::string type = getFigureType(argv[1]);
+	if(type == "plane"){
+		p = new Plane();
+		p->load(argv[1]);
+	} 
+	if(type == "box"){
+		b = new Box();
+		b->load(argv[1]);
+	}
+	if(type == "cone"){
+		c = new Cone();
+		c->load(argv[1]);
+	}
+	if(type == "sphere"){
+		s = new Sphere();
+		s->load(argv[1]);
+	}
 
     glutInit(&argc, argv);
     glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA | GLUT_DEPTH);

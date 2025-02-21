@@ -298,6 +298,33 @@ src/Plane.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/UnrealEngine.dir/build.make CMakeFiles/UnrealEngine.dir/src/Plane.cpp.s
 .PHONY : src/Plane.cpp.s
 
+src/Sphere.o: src/Sphere.cpp.o
+.PHONY : src/Sphere.o
+
+# target to build an object file
+src/Sphere.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/src/Sphere.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UnrealEngine.dir/build.make CMakeFiles/UnrealEngine.dir/src/Sphere.cpp.o
+.PHONY : src/Sphere.cpp.o
+
+src/Sphere.i: src/Sphere.cpp.i
+.PHONY : src/Sphere.i
+
+# target to preprocess a source file
+src/Sphere.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/src/Sphere.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UnrealEngine.dir/build.make CMakeFiles/UnrealEngine.dir/src/Sphere.cpp.i
+.PHONY : src/Sphere.cpp.i
+
+src/Sphere.s: src/Sphere.cpp.s
+.PHONY : src/Sphere.s
+
+# target to generate assembly for a file
+src/Sphere.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/src/Sphere.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UnrealEngine.dir/build.make CMakeFiles/UnrealEngine.dir/src/Sphere.cpp.s
+.PHONY : src/Sphere.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -326,6 +353,9 @@ help:
 	@echo "... src/Plane.o"
 	@echo "... src/Plane.i"
 	@echo "... src/Plane.s"
+	@echo "... src/Sphere.o"
+	@echo "... src/Sphere.i"
+	@echo "... src/Sphere.s"
 .PHONY : help
 
 

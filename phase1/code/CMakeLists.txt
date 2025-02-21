@@ -13,6 +13,7 @@ add_executable(generator
     src/Plane.cpp
     src/Box.cpp
     src/Cone.cpp
+    src/Sphere.cpp
     src/Generator.cpp
 )
 
@@ -21,6 +22,7 @@ add_executable(${PROJECT_NAME}
     src/Plane.cpp
     src/Box.cpp
     src/Cone.cpp
+    src/Sphere.cpp
     src/Engine.cpp
 )
 

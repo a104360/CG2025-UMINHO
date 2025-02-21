@@ -6,11 +6,13 @@
 Cone::Cone(){
     radius = 0;
     height = 0;
+    this->type = "cone";
 }
 
 Cone::Cone(float radius,float height){
     this->radius = radius;
     this->height = height;
+    this->type = "cone";
 }
 
 void Cone::generateCone(float radius, float height, int slices, int stacks) {

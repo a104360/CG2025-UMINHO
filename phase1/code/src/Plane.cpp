@@ -8,12 +8,14 @@
 #include <fstream>
 
 Plane::Plane(int length,int divisions){
+    this->type = "plane";
     this->length = length;
     this->divisions = divisions;
     generatePlane(length,divisions);
 }
 
 Plane::Plane(){
+    this->type = "plane";
     this->length = 0;
     this->divisions = 0;
 }

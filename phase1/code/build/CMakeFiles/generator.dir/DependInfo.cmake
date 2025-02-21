@@ -13,6 +13,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/retr0/Repositorios/CG2025-UMINHO/phase1/code/src/Figure.cpp" "CMakeFiles/generator.dir/src/Figure.cpp.o" "gcc" "CMakeFiles/generator.dir/src/Figure.cpp.o.d"
   "/home/retr0/Repositorios/CG2025-UMINHO/phase1/code/src/Generator.cpp" "CMakeFiles/generator.dir/src/Generator.cpp.o" "gcc" "CMakeFiles/generator.dir/src/Generator.cpp.o.d"
   "/home/retr0/Repositorios/CG2025-UMINHO/phase1/code/src/Plane.cpp" "CMakeFiles/generator.dir/src/Plane.cpp.o" "gcc" "CMakeFiles/generator.dir/src/Plane.cpp.o.d"
+  "/home/retr0/Repositorios/CG2025-UMINHO/phase1/code/src/Sphere.cpp" "CMakeFiles/generator.dir/src/Sphere.cpp.o" "gcc" "CMakeFiles/generator.dir/src/Sphere.cpp.o.d"
   )
 
 # Targets to which this target links.

@@ -3,6 +3,7 @@
 #include "Plane.h"
 #include "Box.h"
 #include "Cone.h"
+#include "Sphere.h"
 
 void drawPlane(Plane);
 
