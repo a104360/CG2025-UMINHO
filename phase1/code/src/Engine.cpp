@@ -53,6 +53,7 @@ void drawFigure(Figure b){
         //float b = static_cast<float>(rand()) / RAND_MAX;
         //float c = static_cast<float>(rand()) / RAND_MAX;
 
+		//glColor3f(a,b,c);
         glColor3f(1,1,1);
         glVertex3fv(v1);
         glVertex3fv(v2);
@@ -230,6 +231,14 @@ void normal(unsigned char key,int,int){
 		break;
 	case 'j':
 		sY -= 1.0f;
+		break;
+	case 'z':
+		angleX += 1.0f;
+		rX += 0.1f;
+		break;
+	case 'c':
+		angleX += 1.0f;
+		rX -= 0.1f;
 		break;
 	case '+':
 		radius -= 0.05f;
