@@ -97,7 +97,7 @@ void Box::generateBox(int length, int divisions) {
             for(int j = 0; j < divisions; j++) {
                 int currentVertex = faceOffset + (i * pointsOnEdge + j);
                 
-                // Winding order depends on which face we're on
+                // Opposing faces are drawn in opposing directions
                 switch(face) {
                     case 1: // Back face - CW
                     case 3: // Right face - CW

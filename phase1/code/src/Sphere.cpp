@@ -21,8 +21,27 @@ void Sphere::generateSphere(int radius, int slices, int stacks) {
     this->indices.clear();
 
     // The height of a stack is the division of the diameter by the number of stacks
-    float stackHeight = 2.0f * radius / stacks;
+    //float stackHeight = 2.0f * radius / stacks;
+    float stackArch = M_PI / stacks;
 
+    for(int i = 0;i <= stacks;i++){
+        float alpha = M_PI_2 - (i*stackArch);
+        float y = radius * sin(alpha);
+        float stackRadius = sqrt(pow(radius,2) - pow(y,2));
+
+        for(int j = 0; j < slices; j++) {
+            float theta = (2.0f * M_PI * j) / slices;
+
+            float x = stackRadius * cos(theta);
+            float z = stackRadius * sin(theta);
+
+            vertices.push_back(x);
+            vertices.push_back(y);
+            vertices.push_back(z);
+        }
+    }
+
+    /*
     // We are generating the vertices of each stack
     for(int i = 0; i <= stacks; i++) {
         // y is the radius subtracted by the amount of stackHeight
@@ -40,7 +59,7 @@ void Sphere::generateSphere(int radius, int slices, int stacks) {
             vertices.push_back(y);
             vertices.push_back(z);
         }
-    }
+    }*/
 
     // Generate the indices for the faces
     for(int i = 0; i < stacks; i++) {

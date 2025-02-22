@@ -237,7 +237,7 @@ void normal(unsigned char key,int,int){
 		rX += 0.1f;
 		break;
 	case 'c':
-		angleX += 1.0f;
+		angleX -= 1.0f;
 		rX -= 0.1f;
 		break;
 	case '+':
