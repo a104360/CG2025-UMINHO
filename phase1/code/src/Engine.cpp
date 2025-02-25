@@ -6,6 +6,7 @@
 #include <cstring>
 #include <math.h>
 #include "../include/Engine.h"
+#include "../include/Parser.h"
 
 float angleX = 0;
 float angleY = M_PI / 2;
@@ -31,13 +32,7 @@ int lastX = -1;
 int lastY = -1;
 
 
-Plane * p = nullptr;
-
-Box * b = nullptr;
-
-Cone * c = nullptr;
-
-Sphere * s = nullptr;
+World * w = nullptr;
 
 void drawFigure(Figure b){
 	srand(time(0));
@@ -129,11 +124,12 @@ void display() {
 	glRotatef(angleX,rX,rY,rZ);
 	glScalef(1.0f,sY,1.0f);
 		
-    if(p != nullptr) drawFigure(*p);
-	if(b != nullptr) drawFigure(*b);
-	if(c != nullptr) drawFigure(*c);
-	if(s != nullptr) drawFigure(*s);
+    // Draw figures here
 
+	std::vector<Figure *> * f = getFigures(w);
+	for(int i = 0;i < (int) f->size();i++){
+		drawFigure(*f->at(i));
+	}
 
     glutSwapBuffers();
 }
@@ -142,6 +138,7 @@ void reshape(int w, int h) {
     glViewport(0, 0, w, h);
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
+	// fovY,Aspect,zNear,zFar
     gluPerspective(45.0f, (float)w/h, 0.1f, 100.0f);
     glMatrixMode(GL_MODELVIEW);
 }
@@ -274,51 +271,20 @@ void moveCamera(int x,int y){
     glutPostRedisplay();
 }
 
-std::string getFigureType(const char * filename){
-	std::string t = "";
-	std::ifstream file(filename);
-	if(file.is_open()){
-		file >> t;
-		file.close();
-		return t;
-	} else {
-		std::cerr << "File error" << std::endl;
-		return "";
-	}
-	return "";
-}
-
-
 int main(int argc, char** argv) {
     if (argc != 2) {
         std::cerr << "Usage: " << argv[0] << " <model_file>" << std::endl;
         return 1;
     }
-	size_t filenameSize = strlen(argv[1]);
+	/*size_t filenameSize = strlen(argv[1]);
 	if(argv[1][filenameSize - 3] != '.' || argv[1][filenameSize - 2] != '3' || argv[1][filenameSize - 1] != 'd'){
 		std::cerr << "File is not valid. The file must be a .3d file." << std::endl;
 		return 2;
-	}
+	}*/
 	
 	srand((unsigned)time(NULL));
 
-	std::string type = getFigureType(argv[1]);
-	if(type == "plane"){
-		p = new Plane();
-		p->load(argv[1]);
-	} 
-	if(type == "box"){
-		b = new Box();
-		b->load(argv[1]);
-	}
-	if(type == "cone"){
-		c = new Cone();
-		c->load(argv[1]);
-	}
-	if(type == "sphere"){
-		s = new Sphere();
-		s->load(argv[1]);
-	}
+	w = parseFile(argv[1]);
 
     glutInit(&argc, argv);
     glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA | GLUT_DEPTH);

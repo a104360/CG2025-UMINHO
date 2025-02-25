@@ -271,6 +271,30 @@ src/Generator.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/src/Generator.cpp.s
 .PHONY : src/Generator.cpp.s
 
+src/Parser.o: src/Parser.cpp.o
+.PHONY : src/Parser.o
+
+# target to build an object file
+src/Parser.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UnrealEngine.dir/build.make CMakeFiles/UnrealEngine.dir/src/Parser.cpp.o
+.PHONY : src/Parser.cpp.o
+
+src/Parser.i: src/Parser.cpp.i
+.PHONY : src/Parser.i
+
+# target to preprocess a source file
+src/Parser.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UnrealEngine.dir/build.make CMakeFiles/UnrealEngine.dir/src/Parser.cpp.i
+.PHONY : src/Parser.cpp.i
+
+src/Parser.s: src/Parser.cpp.s
+.PHONY : src/Parser.s
+
+# target to generate assembly for a file
+src/Parser.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UnrealEngine.dir/build.make CMakeFiles/UnrealEngine.dir/src/Parser.cpp.s
+.PHONY : src/Parser.cpp.s
+
 src/Plane.o: src/Plane.cpp.o
 .PHONY : src/Plane.o
 
@@ -325,6 +349,30 @@ src/Sphere.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/UnrealEngine.dir/build.make CMakeFiles/UnrealEngine.dir/src/Sphere.cpp.s
 .PHONY : src/Sphere.cpp.s
 
+src/tinyxml2.o: src/tinyxml2.cpp.o
+.PHONY : src/tinyxml2.o
+
+# target to build an object file
+src/tinyxml2.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UnrealEngine.dir/build.make CMakeFiles/UnrealEngine.dir/src/tinyxml2.cpp.o
+.PHONY : src/tinyxml2.cpp.o
+
+src/tinyxml2.i: src/tinyxml2.cpp.i
+.PHONY : src/tinyxml2.i
+
+# target to preprocess a source file
+src/tinyxml2.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UnrealEngine.dir/build.make CMakeFiles/UnrealEngine.dir/src/tinyxml2.cpp.i
+.PHONY : src/tinyxml2.cpp.i
+
+src/tinyxml2.s: src/tinyxml2.cpp.s
+.PHONY : src/tinyxml2.s
+
+# target to generate assembly for a file
+src/tinyxml2.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UnrealEngine.dir/build.make CMakeFiles/UnrealEngine.dir/src/tinyxml2.cpp.s
+.PHONY : src/tinyxml2.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -350,12 +398,18 @@ help:
 	@echo "... src/Generator.o"
 	@echo "... src/Generator.i"
 	@echo "... src/Generator.s"
+	@echo "... src/Parser.o"
+	@echo "... src/Parser.i"
+	@echo "... src/Parser.s"
 	@echo "... src/Plane.o"
 	@echo "... src/Plane.i"
 	@echo "... src/Plane.s"
 	@echo "... src/Sphere.o"
 	@echo "... src/Sphere.i"
 	@echo "... src/Sphere.s"
+	@echo "... src/tinyxml2.o"
+	@echo "... src/tinyxml2.i"
+	@echo "... src/tinyxml2.s"
 .PHONY : help
 
 

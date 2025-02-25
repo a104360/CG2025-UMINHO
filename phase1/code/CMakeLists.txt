@@ -24,6 +24,8 @@ add_executable(${PROJECT_NAME}
     src/Cone.cpp
     src/Sphere.cpp
     src/Engine.cpp
+    src/Parser.cpp
+    src/tinyxml2.cpp
 )
 
 # Enable more warnings (optional)
